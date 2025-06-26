@@ -114,7 +114,7 @@ public class UserController {
     }
 
     @GetMapping("/test")
-    public ResponseEntity<?> test(@RequestBody UserEntity loginRequest){
-        return ResponseEntity.ok("hii");
+    public String test(){
+        return "hii";
     }
 }
