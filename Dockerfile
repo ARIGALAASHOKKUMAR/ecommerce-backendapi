@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM maven:3.9.6-eclipse-temurin-19 AS build
 WORKDIR /app
 
 # Copy only what's needed first (leveraging Docker layer caching)
@@ -17,7 +17,7 @@ RUN mvn clean install -DskipTests
 #
 # Package stage
 #
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:19-jdk
 WORKDIR /app
 
 # Copy the JAR built in the previous stage
