@@ -9,5 +9,5 @@ RUN mvn clean install -DskipTests
 FROM eclipse-temurin:19-jdk
 WORKDIR /app
 COPY --from=build /app/target/test-0.0.1-SNAPSHOT.jar demo.jar
-ENV PORT=8089
+ENV PORT=8080
 ENTRYPOINT ["java", "-jar", "demo.jar"]
